@@ -157,11 +157,13 @@ This project is for **personal and portfolio use**.
 
 **Eswar Maguluri**
 Django / Python Developer
+
 GitHub: [https://github.com/eswar2627](https://github.com/eswar2627)
 
 ---
 
 If you are a recruiter or developer reviewing this repository:
+
 This project demonstrates **production-correct Django practices**, secure deployments, and real-world media handling.
 
 
