@@ -39,9 +39,17 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 if not SECRET_KEY:
     raise ValueError("SECRET_KEY not set")
 
-DEBUG = os.getenv('DEBUG','False').lower() == 'true'
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+ALLOWED_HOSTS = [host for host in ALLOWED_HOSTS if host]
+# Safety fallback for Railway
+if os.getenv("RAILWAY_ENVIRONMENT"):
+    ALLOWED_HOSTS += [
+        "localhost",
+        "127.0.0.1",
+        ".railway.app",
+    ]
 
 
 
@@ -138,6 +146,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'core/static'
+]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
