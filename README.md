@@ -76,7 +76,7 @@ Create a `.env` file locally (do **not** commit it):
 
 ```env
 SECRET_KEY=your-django-secret-key
-DEBUG=False
+DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 
 CLOUDINARY_CLOUD_NAME=your_cloud_name
