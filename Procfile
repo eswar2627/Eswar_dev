@@ -1,1 +1,0 @@
-web: gunicorn Eswar_dev.wsgi
