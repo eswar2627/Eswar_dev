@@ -1,15 +1,21 @@
 # Environment
 .env
+.env.*
 .venv/
 venv/
 
-# Django
-.sqlite3
-media/
-staticfiles/
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.log
 
-# IDE
+# Django
+*.sqlite3
+media/
+staticfiles/
+
+# IDE / OS
 .idea/
 .vscode/
+.DS_Store
