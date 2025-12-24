@@ -126,7 +126,7 @@
         </div>
 
         <!-- SCREENSHOTS -->
-        {% if project.images.all %}
+        {% if project.images.exists %}
         <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
             {% for img in project.images.all %}
@@ -188,4 +188,5 @@ function closeLightbox() {
     lightbox.classList.remove('flex');
 }
 </script>
+
 {% endblock %}
