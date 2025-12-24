@@ -1,0 +1,1 @@
+web: python manage.py collectstatic --noinput && gunicorn Eswar_dev.wsgi --bind 0.0.0.0:$PORT
