@@ -45,9 +45,9 @@ A production-ready **personal portfolio website** built with **Django** to showc
 ```
 Eswar_dev/
 │
-├── Eswar_dev/          # Django project settings
-├── core/               # Main application (projects, images, views)
-├── staticfiles/        # Collected static files (production)
+├── Eswar_dev/         
+├── core/               
+├── staticfiles/        
 ├── manage.py
 ├── requirements.txt
 ├── Procfile
