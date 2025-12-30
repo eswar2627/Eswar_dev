@@ -1,0 +1,191 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+{{ project.title }} | Eswar Portfolio
+{% endblock %}
+
+{% block extra_head %}
+<meta name="description"
+      content="{{ project.short_description|default:project.title|truncatechars:150 }}">
+{% endblock %}
+
+{% block content %}
+<section class="max-w-6xl mx-auto px-6 py-24">
+    <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-10 fade-up">
+
+        <!-- TITLE -->
+        <h1 class="text-4xl font-bold mb-4">
+            {{ project.title }}
+        </h1>
+
+        <!-- DESCRIPTION -->
+        {% if project.full_description %}
+        <p class="text-gray-400 max-w-3xl mb-12">
+            {{ project.full_description }}
+        </p>
+        {% endif %}
+
+        <!-- BACKEND IMPLEMENTATION -->
+        {% if project.backend_implementation %}
+        <div class="mb-14">
+            <h2 class="text-2xl font-semibold mb-4">Backend Implementation</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+                {% for point in project.backend_implementation.splitlines %}
+                    {% if point %}
+                    <li>{{ point }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- FRONTEND IMPLEMENTATION -->
+        {% if project.frontend_implementation %}
+        <div class="mb-14">
+            <h2 class="text-2xl font-semibold mb-4">Frontend Implementation</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+                {% for point in project.frontend_implementation.splitlines %}
+                    {% if point %}
+                    <li>{{ point }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- WHY THIS APPLICATION -->
+        {% if project.why_this_application %}
+        <div class="mb-14">
+            <h2 class="text-2xl font-semibold mb-4">Why This Application</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+                {% for point in project.why_this_application.splitlines %}
+                    {% if point %}
+                    <li>{{ point }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- TECH STACK -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+            {% if project.backend %}
+            <div>
+                <h3 class="text-sm font-semibold text-gray-300 mb-1">Backend</h3>
+                <p class="text-gray-400 text-sm">{{ project.backend }}</p>
+            </div>
+            {% endif %}
+            {% if project.frontend %}
+            <div>
+                <h3 class="text-sm font-semibold text-gray-300 mb-1">Frontend</h3>
+                <p class="text-gray-400 text-sm">{{ project.frontend }}</p>
+            </div>
+            {% endif %}
+            {% if project.database %}
+            <div>
+                <h3 class="text-sm font-semibold text-gray-300 mb-1">Database</h3>
+                <p class="text-gray-400 text-sm">{{ project.database }}</p>
+            </div>
+            {% endif %}
+            {% if project.deployment %}
+            <div>
+                <h3 class="text-sm font-semibold text-gray-300 mb-1">Deployment</h3>
+                <p class="text-gray-400 text-sm">{{ project.deployment }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- FEATURES -->
+        {% if project.features %}
+        <div class="mb-14">
+            <h2 class="text-2xl font-semibold mb-4">Key Features</h2>
+            <ul class="list-disc list-inside space-y-2 text-gray-400">
+                {% for feature in project.features.splitlines %}
+                    {% if feature %}
+                    <li>{{ feature }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <!-- LINKS -->
+        <div class="flex flex-wrap gap-4 mb-16">
+            {% if project.github_url %}
+            <a href="{{ project.github_url }}" target="_blank" rel="noopener"
+               class="border border-white/20 px-6 py-3 rounded-lg hover:bg-white/10 transition">
+                GitHub
+            </a>
+            {% endif %}
+            {% if project.live_url %}
+            <a href="{{ project.live_url }}" target="_blank" rel="noopener"
+               class="bg-blue-600 px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                Live Demo
+            </a>
+            {% endif %}
+        </div>
+
+        <!-- SCREENSHOTS -->
+        {% if project.images.exists %}
+        <h2 class="text-2xl font-semibold mb-6">Screenshots</h2>
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-16">
+            {% for img in project.images.all %}
+                {% if img.image %}
+                <button onclick="openLightbox('{{ img.image.url }}')"
+                        class="rounded-xl overflow-hidden border border-white/10 transition hover:scale-[1.02] focus:outline-none">
+                    <img src="{{ img.image.url }}"
+                         class="w-full h-48 object-cover"
+                         alt="{{ project.title }} screenshot">
+                </button>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- NAVIGATION -->
+        <div class="flex justify-between border-t border-white/10 pt-8">
+            {% if previous_project %}
+            <a href="{% url 'project_detail' previous_project.slug %}"
+               class="text-gray-400 hover:text-blue-400 transition">
+                ← {{ previous_project.title }}
+            </a>
+            {% else %}
+            <div></div>
+            {% endif %}
+            {% if next_project %}
+            <a href="{% url 'project_detail' next_project.slug %}"
+               class="text-gray-400 hover:text-blue-400 transition">
+                {{ next_project.title }} →
+            </a>
+            {% endif %}
+        </div>
+
+    </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox"
+     class="fixed inset-0 bg-black/80 hidden items-center justify-center z-50">
+    <button onclick="closeLightbox()"
+            class="absolute top-6 right-6 text-white text-3xl"
+            aria-label="Close image">&times;</button>
+    <img id="lightbox-img"
+         class="max-h-[90vh] max-w-[90vw] rounded-xl"
+         alt="Project screenshot preview">
+</div>
+
+<script>
+function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+}
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+}
+</script>
+{% endblock %}
