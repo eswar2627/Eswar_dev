@@ -1,0 +1,90 @@
+[
+{
+  "model": "core.skill",
+  "pk": 1,
+  "fields": {
+    "category": "Programming Languages",
+    "skills": "Python, Java"
+  }
+},
+{
+  "model": "core.skill",
+  "pk": 2,
+  "fields": {
+    "category": "Backend Development",
+    "skills": "Django, Django REST Framework, REST APIs, Authentication, Payments"
+  }
+},
+{
+  "model": "core.skill",
+  "pk": 3,
+  "fields": {
+    "category": "Frontend Development",
+    "skills": "HTML, CSS, JavaScript, Bootstrap, Tailwind"
+  }
+},
+{
+  "model": "core.skill",
+  "pk": 4,
+  "fields": {
+    "category": "Databases",
+    "skills": "SQLite3, PostgreSQL"
+  }
+},
+{
+  "model": "core.skill",
+  "pk": 5,
+  "fields": {
+    "category": "Tools",
+    "skills": "Git, GitHub"
+  }
+},
+{
+  "model": "core.skill",
+  "pk": 6,
+  "fields": {
+    "category": "Deployment",
+    "skills": "Railway"
+  }
+},
+  {
+    "model": "core.project",
+    "fields": {
+      "title": "FoodPlaza",
+      "slug": "foodplaza",
+      "short_description": "FoodPlaza is a food delivery web application that connects customers with nearby restaurants for seamless food ordering, tracking, and delivery.",
+      "full_description": "FoodPlaza is a full-stack food ordering web application built to deliver a smooth and intuitive online food ordering experience. The platform allows users to browse restaurants, view dynamic menus, manage a cart, place orders, and track them in real time. It includes secure user authentication for login and signup, order history with past invoices, and Google Maps integration for accurate location tracking and delivery visibility.",
+      "backend_implementation": "Developed the backend using Django with a modular architecture for user management, menu items, orders, and payments.\nImplemented secure authentication, order processing, order history, and order status tracking using Django ORM.\nBuilt an admin dashboard to manage orders, track daily revenue, and monitor customer and delivery details.",
+      "frontend_implementation": "Designed a responsive and user-friendly interface using HTML, CSS, Bootstrap, and Django templates.\nImplemented dynamic menu browsing, cart management, checkout flow, and payment selection.\nDeveloped order confirmation, invoice download, order tracking, and order history user interfaces.",
+      "why_this_application": "Provides a simple, intuitive, and seamless food ordering experience with real-time order tracking.",
+      "backend": "Django, Python",
+      "frontend": "HTML, CSS, JavaScript, Bootstrap",
+      "database": "SQLite3",
+      "features": "User-friendly food ordering system\nRestaurant management dashboard\nDynamic menu and cart\nOrder history and past invoices\nReal-time order tracking and status updates\nSecure user authentication (login/signup)\nGoogle Maps integration for location tracking\nMultiple payment methods (Cash, Card, UPI, etc.)\nDownloadable invoice after successful order",
+      "deployment": "Railway",
+      "payment": "Payment gateway",
+      "github_url": "https://github.com/eswar2627/FoodPlaza",
+      "live_url": null
+    }
+  },
+  {
+    "model": "core.project",
+    "fields": {
+      "title": "Prime Store",
+      "slug": "prime-store",
+      "short_description": "Prime Store is a full-stack e-commerce web application built using Django that enables users to browse products, manage carts, and complete secure online purchases with a modern, responsive user interface.",
+      "full_description": "Prime Store is a full-stack e-commerce web application that enables users to browse products, manage carts, and place orders through a secure and scalable platform.",
+      "backend_implementation": "Developed backend using Django with modular apps for authentication, products, cart, and orders.\nImplemented secure user authentication and order processing using Django ORM.\nIntegrated payment gateway and admin panel for product and order management.",
+      "frontend_implementation": "Designed responsive UI using HTML, CSS, Bootstrap, and Django templates.\nImplemented dynamic features such as search, filters, cart updates, and checkout flow.\nEnsured smooth navigation and cross-device compatibility.",
+      "why_this_application": "Provides a clean, intuitive, and responsive interface for a smooth online shopping experience.",
+      "backend": "Django, Django ORM",
+      "frontend": "HTML, CSS, JavaScript, Bootstrap, AJAX",
+      "database": "PostgreSQL",
+      "features": "User authentication and authorization\nProduct listing and detailed product pages\nShopping cart and wishlist functionality\nSecure payment gateway integration (Stripe)\nOrder history and order tracking\nAdmin dashboard with sales and user analytics\nResponsive UI for mobile and desktop",
+      "deployment": "Railway",
+      "payment": "Stripe",
+      "github_url": "https://github.com/eswar2627/Prime-Store",
+      "live_url": null
+    }
+  }
+]
