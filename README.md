@@ -1,6 +1,6 @@
 # Eswar_dev – Django Portfolio Website
 
-A production-ready **personal portfolio website** built with **Django** to showcase projects, skills, and contact information. The project follows modern deployment best practices, including **secure environment variable management**, **Cloudinary-based media storage**, and **Railway-ready configuration**.
+A production-ready **personal portfolio website** built with **Django** to showcase projects, skills, and contact information. The project follows modern deployment best practices, including **secure environment variable management**, **Cloudinary-based media storage**.
 
 ---
 
@@ -11,7 +11,7 @@ A production-ready **personal portfolio website** built with **Django** to showc
 * Responsive UI suitable for desktop and mobile
 * Secure handling of secrets using environment variables
 * Cloud-based media storage (no local media dependency)
-* Deployment-ready for Railway (or similar platforms)
+* Deployment-ready for Render (or similar platforms)
 
 ---
 
@@ -34,7 +34,7 @@ A production-ready **personal portfolio website** built with **Django** to showc
 
 **Deployment**
 
-* Railway
+* Render
 * Gunicorn
 * WhiteNoise (static files)
 
@@ -115,9 +115,9 @@ Open: `http://127.0.0.1:8000/`
 ## 🚀 Deployment (Railway)
 
 1. Push code to GitHub (no `.env`, no database)
-2. Create a new Railway project → **Deploy from GitHub**
-3. Add environment variables in Railway dashboard
-4. Railway will automatically:
+2. Create a new Render project → **Deploy from GitHub**
+3. Add environment variables in Render dashboard
+4. Render will automatically:
 
    * Install dependencies
    * Collect static files
