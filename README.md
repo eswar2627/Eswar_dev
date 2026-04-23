@@ -147,7 +147,6 @@ This project is for **personal and portfolio use**.
 <img width="1920" height="951" alt="MY PROJECTS" src="https://github.com/user-attachments/assets/83ca452c-e73d-4210-99f0-be6d5acef002" />
 <img width="1920" height="950" alt="PRIME STORE" src="https://github.com/user-attachments/assets/53e3341c-a988-44fe-851a-085b40c8b142" />
 <img width="1920" height="918" alt="FOODPLAZA" src="https://github.com/user-attachments/assets/3e67f38f-6d22-41a0-9d8e-aaa5efe12d17" />
-<img width="1920" height="927" alt="FOODPLAZA SS" src="https://github.com/user-attachments/assets/d532cc65-5088-4162-88cc-d9575411aee9" />
 <img width="1881" height="943" alt="CONTACT ME" src="https://github.com/user-attachments/assets/60984c4c-8f1b-4566-bf8a-2348a7dc678d" />
 
 
